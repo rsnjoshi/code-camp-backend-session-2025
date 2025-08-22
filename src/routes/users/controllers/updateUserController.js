@@ -2,13 +2,12 @@ import { UserService } from "../../../services/index.js";
 
 const updateUserController = async (req, res) => {
   try {
-    const params = req.params;
-    const body = req.body;
+    const body = req.validated.body;
+    const params = req.validated.params;
 
     const userId = params.userId;
 
     const userService = new UserService();
-
     const user = await userService.updateUser(userId, body);
 
     res.status(200).json({

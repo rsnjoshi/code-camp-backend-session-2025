@@ -2,7 +2,7 @@ import { UserService } from "../../../services/index.js";
 
 const getUserByIdConroller = async (req, res) => {
   try {
-    const params = req.params;
+    const params = req.validated.params;
     const userId = params.userId;
 
     const userService = new UserService();

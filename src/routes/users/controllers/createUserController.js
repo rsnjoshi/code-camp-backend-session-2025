@@ -1,9 +1,8 @@
 import { UserService } from "./../../../services/index.js";
 
 const createUserController = async (req, res) => {
-  const body = req.body;
-
   try {
+    const body = req.validated.body;
     const userService = new UserService();
 
     const user = await userService.createUser(body);
