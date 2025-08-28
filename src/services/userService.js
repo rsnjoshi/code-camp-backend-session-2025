@@ -86,4 +86,22 @@ export class UserService {
       throw error;
     }
   }
+
+  async getUserByEmail(email) {
+    try {
+      const user = await this.prisma.user.findFirst({
+        where: {
+          email: email,
+          deletedAt: null,
+        },
+      });
+      return user;
+    } catch (error) {
+      console.log(
+        `Something went wrong while getting the user with email: ${email}`,
+        error
+      );
+      throw error;
+    }
+  }
 }
