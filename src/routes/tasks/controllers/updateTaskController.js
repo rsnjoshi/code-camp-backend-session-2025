@@ -2,8 +2,8 @@ import { TaskService } from "../../../services/index.js";
 
 const updateTaskController = async (req, res) => {
   try {
-    const params = req.params;
-    const body = req.body;
+    const params = req.validated.params;
+    const body = req.validated.body;
 
     const taskId = params.taskId;
 

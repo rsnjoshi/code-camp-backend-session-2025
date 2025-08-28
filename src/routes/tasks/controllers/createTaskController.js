@@ -1,8 +1,8 @@
 import { TaskService } from "./../../../services/index.js";
 
 const createTaskController = async (req, res) => {
-  const body = req.body;
-  const params = req.params;
+  const body = req.validated.body;
+  const params = req.validated.params;
 
   const columnId = params.columnId;
 

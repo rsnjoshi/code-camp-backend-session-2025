@@ -1,8 +1,8 @@
 import { ColumnService } from "../../../services/index.js";
 
-const getColumnByIdConroller = async (req, res) => {
+const getColumnByIdController = async (req, res) => {
   try {
-    const params = req.params;
+    const params = req.validated.params;
     const columnId = params.columnId;
 
     const columnService = new ColumnService();
@@ -28,4 +28,4 @@ const getColumnByIdConroller = async (req, res) => {
   return;
 };
 
-export { getColumnByIdConroller };
+export { getColumnByIdController };

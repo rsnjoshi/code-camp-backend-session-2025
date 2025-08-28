@@ -2,7 +2,7 @@ import { TaskService } from "../../../services/index.js";
 
 const getTaskByIdController = async (req, res) => {
   try {
-    const params = req.params;
+    const params = req.validated.params;
     const taskId = params.taskId;
 
     const taskService = new TaskService();

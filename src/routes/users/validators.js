@@ -1,5 +1,14 @@
 import { body, param } from "express-validator";
 
+const userParamValidator = [
+  param("userId")
+    .notEmpty()
+    .isUUID()
+    .withMessage(
+      "userId should be provided as a param :userId and must be a uuid!!"
+    ),
+];
+
 const createUserBodyValidator = [
   body("email").isEmail().withMessage("email should be a valid email string!!"),
   body("fullName")
@@ -10,15 +19,6 @@ const createUserBodyValidator = [
     .notEmpty()
     .isString()
     .withMessage("password should be a valid string"),
-];
-
-const userParamValidator = [
-  param("userId")
-    .notEmpty()
-    .isUUID()
-    .withMessage(
-      "userId should be provided as a param :userId and must be a uuid!!"
-    ),
 ];
 
 const updateUserBodyValidator = [

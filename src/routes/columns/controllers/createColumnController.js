@@ -1,8 +1,8 @@
 import { ColumnService } from "./../../../services/index.js";
 
 const createColumnController = async (req, res) => {
-  const body = req.body;
-  const params = req.params;
+  const body = req.validated.body;
+  const params = req.validated.params;
 
   const userId = params.userId;
 

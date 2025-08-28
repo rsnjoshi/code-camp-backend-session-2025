@@ -2,7 +2,7 @@ import { ColumnService } from "../../../services/index.js";
 
 const deleteColumnController = async (req, res) => {
   try {
-    const params = req.params;
+    const params = req.validated.params;
 
     const columnId = params.columnId;
 

@@ -2,7 +2,7 @@ import { TaskService } from "../../../services/index.js";
 
 const getColumnTaskController = async (req, res) => {
   try {
-    const params = req.params;
+    const params = req.validated.params;
     const columnId = params.columnId;
 
     const taskService = new TaskService();

@@ -2,14 +2,14 @@ import { ColumnService } from "../../../services/index.js";
 
 const updateColumnController = async (req, res) => {
   try {
-    const params = req.params;
-    const body = req.body;
+    const params = req.validated.params;
+    const body = req.validated.body;
 
     const columnId = params.columnId;
 
-    const columnSerive = new ColumnService();
+    const columnService = new ColumnService();
 
-    const column = await columnSerive.updateColumn(columnId, body);
+    const column = await columnService.updateColumn(columnId, body);
 
     res.status(200).json({
       message: "Successfully updated the column!!",
