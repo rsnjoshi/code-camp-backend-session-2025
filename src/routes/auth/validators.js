@@ -10,6 +10,9 @@ const registerUserValidator = [
     .notEmpty()
     .isString()
     .withMessage("password should be a valid string"),
+  body("isAdmin")
+    .isBoolean()
+    .withMessage("isAdmin should be a boolean value!!"),
 ];
 
 const loginUserValidator = [

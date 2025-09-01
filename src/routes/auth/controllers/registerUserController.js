@@ -14,6 +14,7 @@ const registerUserController = async (req, res) => {
       email: body.email,
       fullName: body.fullName,
       password: hashedPassword,
+      isAdmin: body.isAdmin,
     };
 
     const user = await userService.createUser(finalBody);
@@ -24,6 +25,7 @@ const registerUserController = async (req, res) => {
         userId: user.id,
         email: user.email,
         fullName: user.fullName,
+        isAdmin: user.isAdmin,
       },
     });
   } catch (error) {
